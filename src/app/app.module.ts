@@ -20,6 +20,14 @@ import { TabArticlePage } from '../pages/tab-article/tab-article';
 import { TabContactPage } from '../pages/tab-contact/tab-contact';
 import { TabsPage } from '../pages/tabs/tabs';
 
+// Login and Register page
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+
+// Web API
+import { HttpModule } from '@angular/http';
+import { WebapiServiceProvider } from '../providers/webapi-service/webapi-service';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -34,11 +42,14 @@ import { TabsPage } from '../pages/tabs/tabs';
     TabServicePage,
     TabArticlePage,
     TabContactPage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -54,12 +65,15 @@ import { TabsPage } from '../pages/tabs/tabs';
      TabServicePage,
      TabArticlePage,
      TabContactPage,
-     TabsPage
+     TabsPage,
+     LoginPage,
+     RegisterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    WebapiServiceProvider
   ]
 })
 export class AppModule {}

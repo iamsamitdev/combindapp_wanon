@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TabHomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TabHomePage {
 
+  fullname:string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.fullname = localStorage.getItem('fullnameLogin');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabHomePage');
+  }
+
+  logout(){
+    // คำสั่งในการ clear localStorage ออก
+    localStorage.removeItem('userLogin');
+    localStorage.removeItem('fullnameLogin');
+    // ทำการเปลี่ยนไปหน้า login
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }

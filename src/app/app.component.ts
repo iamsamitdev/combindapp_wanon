@@ -7,6 +7,7 @@ import { SideSchedulePage } from '../pages/side-schedule/side-schedule';
 import { SidePortfolioPage } from '../pages/side-portfolio/side-portfolio';
 import { SidePaymentPage } from '../pages/side-payment/side-payment';
 import { SideSettingPage } from '../pages/side-setting/side-setting';
+import { LoginPage } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
@@ -37,6 +38,14 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      // ตรวจว่ามีข้อมูลใน Local Storage Login หรือไม่
+      if(localStorage.getItem("userLogin") == null){
+          this.rootPage = LoginPage;
+      }else{
+        this.rootPage = TabsPage;
+      }
+
     });
   }
 
