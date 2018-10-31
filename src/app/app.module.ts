@@ -27,6 +27,7 @@ import { RegisterPage } from '../pages/register/register';
 // Web API
 import { HttpModule } from '@angular/http';
 import { WebapiServiceProvider } from '../providers/webapi-service/webapi-service';
+import { ShowmemberPage } from '../pages/showmember/showmember';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { WebapiServiceProvider } from '../providers/webapi-service/webapi-servic
     TabContactPage,
     TabsPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    ShowmemberPage
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,8 @@ import { WebapiServiceProvider } from '../providers/webapi-service/webapi-servic
      TabContactPage,
      TabsPage,
      LoginPage,
-     RegisterPage
+     RegisterPage,
+     ShowmemberPage
   ],
   providers: [
     StatusBar,

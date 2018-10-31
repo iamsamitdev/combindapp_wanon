@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { ShowmemberPage } from '../showmember/showmember';
 
 @IonicPage()
 @Component({
@@ -25,6 +26,10 @@ export class TabHomePage {
     localStorage.removeItem('fullnameLogin');
     // ทำการเปลี่ยนไปหน้า login
     this.navCtrl.setRoot(LoginPage);
+  }
+
+  showMember(){
+    this.navCtrl.push(ShowmemberPage);
   }
 
 }

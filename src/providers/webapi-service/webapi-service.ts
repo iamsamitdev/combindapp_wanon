@@ -7,7 +7,7 @@ export class WebapiServiceProvider {
   baseURLAPI:any;
   
   constructor(public http: Http) {
-    this.baseURLAPI = "http://localhost/combindapp_wanon_api/";
+    this.baseURLAPI = "http://192.168.141.72/combindapp_wanon_api/";
   }
 
   // Post method

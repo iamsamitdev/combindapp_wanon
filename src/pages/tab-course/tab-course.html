@@ -10,6 +10,24 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-card *ngFor="let cdata of courseData">
+    <img src="http://localhost/combindapp_wanon_api/images/{{cdata.images}}" />
+    <ion-card-content>
+      <ion-card-title>
+        {{cdata.name}}
+      </ion-card-title>
+      <p>
+        {{cdata.description}}
+      </p>
+      <ion-row>
+        <ion-col >
+          ราคา {{cdata.price | currency:'THB'}} บาท
+        </ion-col>
+        <ion-col text-right>
+          สร้างเมื่อ {{cdata.create_at}}
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

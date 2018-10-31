@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TabCoursePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { WebapiServiceProvider } from '../../providers/webapi-service/webapi-service';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TabCoursePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  // กำหนดตัวแปรไว้รับค่าจาก webAPI
+  courseData:any;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public webAPI: WebapiServiceProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TabCoursePage');
+    this.webAPI.getData('feed_course.php').then((result)=>{
+      console.log(result);
+      this.courseData = result;
+    });
   }
 
 }
